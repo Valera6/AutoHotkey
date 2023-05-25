@@ -1,8 +1,8 @@
-#Setup
+# Setup
 download AutoHotkey, create .ahk file, add shortcut to shell:startup
 
 Copy-paste wanted blocks in there
-##Recommended Headers:
+## Recommended Headers:
 #SingleInstance force
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
