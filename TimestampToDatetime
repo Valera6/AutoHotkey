@@ -1,0 +1,19 @@
+<!t::
+    originalClipboard := clipboard
+    clipboard := ""
+    Send, ^c
+    ClipWait, 1
+    timestamp := clipboard
+    clipboard = % originalClipboard
+    if (StrLen(timestamp)==10)
+        timestamp := Round(timestamp*1/1)
+    else if (StrLen(timestamp)==13)
+        timestamp := Round(timestamp/1000)
+    else
+        return
+    vDate := 19700101000000
+    EnvAdd, vDate, % timestamp, Secondsw
+    s := vDate
+    formattedDate = % Format("{1}-{2}-{3} {4}:{5}:{6}", SubStr(s,1,4), SubStr(s,5,2), SubStr(s,7,2), SubStr(s,9,2),SubStr(s,11,2),SubStr(s,13,2))
+    MsgBox % formattedDate
+Return
